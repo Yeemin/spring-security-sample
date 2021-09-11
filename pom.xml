@@ -7,12 +7,27 @@
     <groupId>org.example</groupId>
     <artifactId>spring-security-sample</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>hello-security</module>
+    </modules>
 
     <packaging>pom</packaging>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
+        <spring-security-version>5.5.1</spring-security-version>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-bom</artifactId>
+                <version>5.5.1</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
